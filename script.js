@@ -43,3 +43,15 @@ function unitbtnn() {
   var ffe = document.getElementById("slidedropef");
   ffe.style.display = "none";
 }
+
+// sdlfioisrg
+
+
+
+function oneclickkk() {
+  var x = document.getElementById("slidedropef");
+
+alert("hfyusf")
+
+
+}

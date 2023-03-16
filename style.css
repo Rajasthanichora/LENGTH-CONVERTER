@@ -4,41 +4,38 @@
 h1 {
   text-align: center;
 }
-
 #equal {
   margin: 10px;
   padding-bottom: 32px;
 }
-
+html {
+  height: 100%;
+}
 body {
-  height: 607px;
-  width: 100%;
+  height: 97%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-image: linear-gradient(45deg, #12c2e9, #c471ed , #f64f59);
+  background-image: linear-gradient(45deg, #12c2e9, #c471ed, #f64f59);
   background-repeat: no-repeat;
 }
-
 #convertsection {
   border: 1px solid #dadce0;
   border-radius: 8px;
   width: 60%;
-  height: 50%;
+  height: 290px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: white;
 }
-
 .container {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
 input {
   background-color: #fff;
   border: 1px solid #dadce0;
@@ -50,7 +47,6 @@ input {
   text-align: center;
   width: 197px;
 }
-
 .btnn {
   background-color: #f8f9fa;
   border: 1px solid #dadce0;
@@ -62,11 +58,9 @@ input {
   text-align: center;
   width: 211px;
 }
-
 .btnn:hover {
   background-color: #e4e4e4;
 }
-
 .slidesec {
   background-color: #f8f9fa;
   border: 1px solid #bfc0c2;
@@ -76,7 +70,6 @@ input {
   width: 209px;
   position: absolute;
 }
-
 .slideunit1 {
   color: #000;
   height: 17px;
@@ -88,23 +81,20 @@ input {
   background-color: #669df7;
   color: white;
 }
-
-#slidedropef{
+#slidedropef {
   display: none;
   position: absolute;
   z-index: 1;
 }
-#slidedropeff{
+#slidedropeff {
   display: none;
   position: absolute;
   z-index: 1;
 }
-
 ul {
   padding: 0px;
   margin: 0;
 }
-
 ul a {
   text-decoration: none;
   display: block;
@@ -114,9 +104,6 @@ ul a {
 /* RESONSIV */
 
 @media only screen and (max-width: 500px) {
-  body {
-    height: 100%;
-  }
   #convertsection {
     width: 80%;
     height: 100%;
