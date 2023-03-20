@@ -1,27 +1,9 @@
-// inches.addEventListener("input", function () {
-//   let ghh = this.value;
-//   let jhh = ghh / 36;
-//   if (!Number.isInteger(jhh)) {
-//     jhh = jhh.toFixed(3);
-//   }
-//   yards.value = jhh;
-// });
-
-// function myInput() {
-// 	option_from = yardsection.value;
-// 	option_to = inchsection.value;
-
-// 	if (option_from === "YARD" && option_to === "INCH") {
-// 	  input.value = Number(result.value) * 6350;
-// 	}
-//   }
-
 var yardsection = document.getElementById("yardsection");
 var inchsection = document.getElementById("inchsection");
 var input = document.getElementById("input");
 var result = document.getElementById("result");
 
-// result.addEventListener("keyup", myInput);
+result.addEventListener("keyup", myInput);
 input.addEventListener("keyup", myResult);
 yardsection.addEventListener("change", myResult);
 inchsection.addEventListener("change", myResult);
@@ -29,11 +11,13 @@ inchsection.addEventListener("change", myResult);
 option_from = yardsection.value;
 option_to = inchsection.value;
 
+// ! INPUT TO ========= RESULT
+
 function myResult() {
   option_from = yardsection.value;
   option_to = inchsection.value;
 
-  // ? meter to ======
+  // ! meter to ======
 
   if (option_from === "Meter" && option_to === "Kilometer") {
     result.value = Number(input.value) * 0.001;
@@ -57,7 +41,7 @@ function myResult() {
     result.value = input.value;
   }
 
-  // ? Yard to ======
+  // ! Yard to ======
 
   if (option_from === "YARD" && option_to === "Kilometer") {
     result.value = Number(input.value) * 0.0009144;
@@ -83,7 +67,7 @@ function myResult() {
     result.value = input.value;
   }
 
-  // ? INCH to ======
+  // ! INCH to ======
 
   if (option_from === "INCH" && option_to === "Kilometer") {
     result.value = Number(input.value) / 39370;
@@ -109,7 +93,7 @@ function myResult() {
     result.value = input.value;
   }
 
-  // ? Centimeter to ======
+  // ! Centimeter to ======
 
   if (option_from === "Centimeter" && option_to === "Kilometer") {
     result.value = Number(input.value) / 100000;
@@ -135,7 +119,7 @@ function myResult() {
     result.value = input.value;
   }
 
-  // ? MILIMETER to ======
+  // ! MILIMETER to ======
 
   if (option_from === "Millimeter" && option_to === "Kilometer") {
     result.value = Number(input.value) / 1e6;
@@ -161,7 +145,7 @@ function myResult() {
     result.value = input.value;
   }
 
-  // ? MIcrometer to ======
+  // ! MIcrometer to ======
 
   if (option_from === "Micrometer" && option_to === "Kilometer") {
     result.value = Number(input.value) / 1e9;
@@ -187,7 +171,7 @@ function myResult() {
     result.value = input.value;
   }
 
-  // ? nanometer to ======
+  // ! nanometer to ======
 
   if (option_from === "Nanometer" && option_to === "Kilometer") {
     result.value = Number(input.value) / 1e12;
@@ -213,7 +197,7 @@ function myResult() {
     result.value = input.value;
   }
 
-  // ? mile to ======
+  // ! mile to ======
 
   if (option_from === "Mile" && option_to === "Kilometer") {
     result.value = Number(input.value) * 1.609;
@@ -239,7 +223,7 @@ function myResult() {
     result.value = input.value;
   }
 
-  // ? foot to ======
+  // ! foot to ======
 
   if (option_from === "Foot" && option_to === "Kilometer") {
     result.value = Number(input.value) / 3281;
@@ -265,7 +249,7 @@ function myResult() {
     result.value = input.value;
   }
 
-  // ? kilometer to ======
+  // ! kilometer to ======
 
   if (option_from === "Kilometer" && option_to === "Foot") {
     result.value = Number(input.value) * 3281;
@@ -291,7 +275,7 @@ function myResult() {
     result.value = input.value;
   }
 
-  // ? Nautical miles to ======
+  // ! Nautical miles to ======
 
   if (option_from === "Nautical" && option_to === "Foot") {
     result.value = Number(input.value) * 6076;
@@ -315,5 +299,296 @@ function myResult() {
     result.value = Number(input.value) * 1.852;
   } else if (option_from === "Nautical" && option_to === "Nautical") {
     result.value = input.value;
+  }
+}
+
+// ! RESULT TO ========= INPUT
+
+function myInput() {
+  option_from = yardsection.value;
+  option_to = inchsection.value;
+
+  // !======= meter to
+
+  if ((option_from === "Meter" && option_to) === "Kilometer") {
+    input.value = Number(result.value) / 0.001;
+  } else if ((option_from === "Meter" && option_to) === "Centimeter") {
+    input.value = Number(result.value) / 100;
+  } else if ((option_from === "Meter" && option_to) === "INCH") {
+    input.value = Number(result.value) / 39.37;
+  } else if ((option_from === "Meter" && option_to) === "Millimeter") {
+    input.value = Number(result.value) / 1000;
+  } else if ((option_from === "Meter" && option_to) === "Micrometer") {
+    input.value = Number(result.value) / 1e6;
+  } else if ((option_from === "Meter" && option_to) === "Nanometer") {
+    input.value = Number(result.value) / 1e9;
+  } else if ((option_from === "Meter" && option_to) === "Mile") {
+    input.value = Number(result.value) / 0.000621371;
+  } else if ((option_from === "Meter" && option_to) === "Foot") {
+    input.value = Number(result.value) / 3.28084;
+  } else if ((option_from === "Meter" && option_to) === "Nautical") {
+    input.value = Number(result.value) / 0.000539957;
+  } else if ((option_from === "Meter" && option_to) === "Meter") {
+    input.value = result.value;
+  }
+
+  // !  ======= YARD to
+
+  if ((option_from === "YARD" && option_to) === "Kilometer") {
+    input.value = Number(result.value) / 0.0009144;
+  } else if ((option_from === "YARD" && option_to) === "Centimeter") {
+    input.value = Number(result.value) / 91.44;
+  } else if ((option_from === "YARD" && option_to) === "INCH") {
+    input.value = Number(result.value) / 36;
+  } else if ((option_from === "YARD" && option_to) === "Meter") {
+    input.value = Number(result.value) / 0.9144;
+  } else if ((option_from === "YARD" && option_to) === "Millimeter") {
+    input.value = Number(result.value) / 914.4;
+  } else if ((option_from === "YARD" && option_to) === "Micrometer") {
+    input.value = Number(result.value) / 914400;
+  } else if ((option_from === "YARD" && option_to) === "Nanometer") {
+    input.value = Number(result.value) / 914400000;
+  } else if ((option_from === "YARD" && option_to) === "Mile") {
+    input.value = Number(result.value) / 0.00056818;
+  } else if ((option_from === "YARD" && option_to) === "Foot") {
+    input.value = Number(result.value) / 3;
+  } else if ((option_from === "YARD" && option_to) === "Nautical") {
+    input.value = Number(result.value) / 0.0004937;
+  } else if ((option_from === "YARD" && option_to) === "YARD") {
+    input.value = result.value;
+  }
+
+  // !======= INCH to
+
+  if ((option_from === "INCH" && option_to) === "Kilometer") {
+    input.value = Number(result.value) * 39370;
+  } else if ((option_from === "INCH" && option_to) === "Centimeter") {
+    input.value = Number(result.value) / 2.54;
+  } else if ((option_from === "INCH" && option_to) === "YARD") {
+    input.value = Number(result.value) * 36;
+  } else if ((option_from === "INCH" && option_to) === "Meter") {
+    input.value = Number(result.value) * 39.37;
+  } else if ((option_from === "INCH" && option_to) === "Millimeter") {
+    input.value = Number(result.value) / 25.4;
+  } else if ((option_from === "INCH" && option_to) === "Micrometer") {
+    input.value = Number(result.value) / 25400;
+  } else if ((option_from === "INCH" && option_to) === "Nanometer") {
+    input.value = Number(result.value) / 2.54e7;
+  } else if ((option_from === "INCH" && option_to) === "Mile") {
+    input.value = Number(result.value) * 63360;
+  } else if ((option_from === "INCH" && option_to) === "Foot") {
+    input.value = Number(result.value) * 12;
+  } else if ((option_from === "INCH" && option_to) === "Nautical") {
+    input.value = Number(result.value) * 72910;
+  } else if ((option_from === "INCH" && option_to) === "INCH") {
+    input.value = result.value;
+  }
+
+  // !======= Centimeter to
+
+  if ((option_from === "Centimeter" && option_to) === "Kilometer") {
+    input.value = Number(result.value) * 100000;
+  } else if ((option_from === "Centimeter" && option_to) === "INCH") {
+    input.value = Number(result.value) * 2.54;
+  } else if ((option_from === "Centimeter" && option_to) === "YARD") {
+    input.value = Number(result.value) * 91.44;
+  } else if ((option_from === "Centimeter" && option_to) === "Meter") {
+    input.value = Number(result.value) * 100;
+  } else if ((option_from === "Centimeter" && option_to) === "Millimeter") {
+    input.value = Number(result.value) / 10;
+  } else if ((option_from === "Centimeter" && option_to) === "Micrometer") {
+    input.value = Number(result.value) / 10000;
+  } else if ((option_from === "Centimeter" && option_to) === "Nanometer") {
+    input.value = Number(result.value) / 1e7;
+  } else if ((option_from === "Centimeter" && option_to) === "Mile") {
+    input.value = Number(result.value) * 160900;
+  } else if ((option_from === "Centimeter" && option_to) === "Foot") {
+    input.value = Number(result.value) * 30.48;
+  } else if ((option_from === "Centimeter" && option_to) === "Nautical") {
+    input.value = Number(result.value) * 185200;
+  } else if ((option_from === "Centimeter" && option_to) === "Centimeter") {
+    input.value = result.value;
+  }
+
+  // !======= Millimeter to
+
+  if ((option_from === "Millimeter" && option_to) === "Kilometer") {
+    input.value = Number(result.value) * 1e6;
+  } else if ((option_from === "Millimeter" && option_to) === "INCH") {
+    input.value = Number(result.value) * 25.4;
+  } else if ((option_from === "Millimeter" && option_to) === "YARD") {
+    input.value = Number(result.value) * 914.4;
+  } else if ((option_from === "Millimeter" && option_to) === "Meter") {
+    input.value = Number(result.value) * 1000;
+  } else if ((option_from === "Millimeter" && option_to) === "Micrometer") {
+    input.value = Number(result.value) / 1000;
+  } else if ((option_from === "Millimeter" && option_to) === "Nanometer") {
+    input.value = Number(result.value) / 1e6;
+  } else if ((option_from === "Millimeter" && option_to) === "Mile") {
+    input.value = Number(result.value) * 1.609e6;
+  } else if ((option_from === "Millimeter" && option_to) === "Foot") {
+    input.value = Number(result.value) * 304.8;
+  } else if ((option_from === "Millimeter" && option_to) === "Nautical") {
+    input.value = Number(result.value) * 1.852e6;
+  } else if ((option_from === "Millimeter" && option_to) === "Centimeter") {
+    input.value = Number(result.value) * 10;
+  } else if ((option_from === "Millimeter" && option_to) === "Millimeter") {
+    input.value = result.value;
+  }
+
+  // !======= Micrometer to
+
+  if ((option_from === "Micrometer" && option_to) === "Kilometer") {
+    input.value = Number(result.value) * 1e9;
+  } else if ((option_from === "Micrometer" && option_to) === "INCH") {
+    input.value = Number(result.value) * 25400;
+  } else if ((option_from === "Micrometer" && option_to) === "YARD") {
+    input.value = Number(result.value) * 914400;
+  } else if ((option_from === "Micrometer" && option_to) === "Meter") {
+    input.value = Number(result.value) * 1e6;
+  } else if ((option_from === "Micrometer" && option_to) === "Millimeter") {
+    input.value = Number(result.value) * 1000;
+  } else if ((option_from === "Micrometer" && option_to) === "Nanometer") {
+    input.value = Number(result.value) / 1000;
+  } else if ((option_from === "Micrometer" && option_to) === "Mile") {
+    input.value = Number(result.value) * 1.609e9;
+  } else if ((option_from === "Micrometer" && option_to) === "Foot") {
+    input.value = Number(result.value) * 304800;
+  } else if ((option_from === "Micrometer" && option_to) === "Nautical") {
+    input.value = Number(result.value) * 1.852e9;
+  } else if ((option_from === "Micrometer" && option_to) === "Centimeter") {
+    input.value = Number(result.value) * 10000;
+  } else if ((option_from === "Micrometer" && option_to) === "Micrometer") {
+    input.value = result.value;
+  }
+
+  // !======= Nanometer to
+
+  if ((option_from === "Nanometer" && option_to) === "Kilometer") {
+    input.value = Number(result.value) * 1e12;
+  } else if ((option_from === "Nanometer" && option_to) === "INCH") {
+    input.value = Number(result.value) * 2.54e7;
+  } else if ((option_from === "Nanometer" && option_to) === "YARD") {
+    input.value = Number(result.value) * 9.144e8;
+  } else if ((option_from === "Nanometer" && option_to) === "Meter") {
+    input.value = Number(result.value) * 1e9;
+  } else if ((option_from === "Nanometer" && option_to) === "Millimeter") {
+    input.value = Number(result.value) * 1e6;
+  } else if ((option_from === "Nanometer" && option_to) === "Micrometer") {
+    input.value = Number(result.value) * 1000;
+  } else if ((option_from === "Nanometer" && option_to) === "Mile") {
+    input.value = Number(result.value) * 1.609e12;
+  } else if ((option_from === "Nanometer" && option_to) === "Foot") {
+    input.value = Number(result.value) * 3.048e8;
+  } else if ((option_from === "Nanometer" && option_to) === "Nautical") {
+    input.value = Number(result.value) * 1.852e12;
+  } else if ((option_from === "Nanometer" && option_to) === "Centimeter") {
+    input.value = Number(result.value) * 1e7;
+  } else if ((option_from === "Nanometer" && option_to) === "Nanometer") {
+    input.value = result.value;
+  }
+
+  // ! =======Mile to
+
+  if ((option_from === "Mile" && option_to) === "Kilometer") {
+    input.value = Number(result.value) / 1.609;
+  } else if ((option_from === "Mile" && option_to) === "Centimeter") {
+    input.value = Number(result.value) / 160900;
+  } else if ((option_from === "Mile" && option_to) === "INCH") {
+    input.value = Number(result.value) / 63360;
+  } else if ((option_from === "Mile" && option_to) === "Meter") {
+    input.value = Number(result.value) / 1609;
+  } else if ((option_from === "Mile" && option_to) === "Millimeter") {
+    input.value = Number(result.value) / 1.609e6;
+  } else if ((option_from === "Mile" && option_to) === "Micrometer") {
+    input.value = Number(result.value) / 1.609e9;
+  } else if ((option_from === "Mile" && option_to) === "Nanometer") {
+    input.value = Number(result.value) / 1.609e12;
+  } else if ((option_from === "Mile" && option_to) === "YARD") {
+    input.value = Number(result.value) / 1760;
+  } else if ((option_from === "Mile" && option_to) === "Foot") {
+    input.value = Number(result.value) / 5280;
+  } else if ((option_from === "Mile" && option_to) === "Nautical") {
+    input.value = Number(result.value) * 1.151;
+  } else if ((option_from === "Mile" && option_to) === "Mile") {
+    input.value = result.value;
+  }
+
+  // ! =======Foot to
+
+  if ((option_from === "Foot" && option_to) === "Kilometer") {
+    input.value = Number(result.value) * 3281;
+  } else if ((option_from === "Foot" && option_to) === "Centimeter") {
+    input.value = Number(result.value) / 30.48;
+  } else if ((option_from === "Foot" && option_to) === "INCH") {
+    input.value = Number(result.value) / 12;
+  } else if ((option_from === "Foot" && option_to) === "Meter") {
+    input.value = Number(result.value) * 3.281;
+  } else if ((option_from === "Foot" && option_to) === "Millimeter") {
+    input.value = Number(result.value) / 304.8;
+  } else if ((option_from === "Foot" && option_to) === "Micrometer") {
+    input.value = Number(result.value) / 304800;
+  } else if ((option_from === "Foot" && option_to) === "Nanometer") {
+    input.value = Number(result.value) / 3.048e8;
+  } else if ((option_from === "Foot" && option_to) === "YARD") {
+    input.value = Number(result.value) * 3;
+  } else if ((option_from === "Foot" && option_to) === "Mile") {
+    input.value = Number(result.value) * 5280;
+  } else if ((option_from === "Foot" && option_to) === "Nautical") {
+    input.value = Number(result.value) * 6076;
+  } else if ((option_from === "Foot" && option_to) === "Foot") {
+    input.value = result.value;
+  }
+
+  // !======= Kilometer to
+
+  if ((option_from === "Kilometer" && option_to) === "Foot") {
+    input.value = Number(result.value) / 3281;
+  } else if ((option_from === "Kilometer" && option_to) === "Centimeter") {
+    input.value = Number(result.value) / 100000;
+  } else if ((option_from === "Kilometer" && option_to) === "INCH") {
+    input.value = Number(result.value) / 39370;
+  } else if ((option_from === "Kilometer" && option_to) === "Meter") {
+    input.value = Number(result.value) / 1000;
+  } else if ((option_from === "Kilometer" && option_to) === "Millimeter") {
+    input.value = Number(result.value) / 1e6;
+  } else if ((option_from === "Kilometer" && option_to) === "Micrometer") {
+    input.value = Number(result.value) / 1e9;
+  } else if ((option_from === "Kilometer" && option_to) === "Nanometer") {
+    input.value = Number(result.value) / 1e12;
+  } else if ((option_from === "Kilometer" && option_to) === "YARD") {
+    input.value = Number(result.value) / 1094;
+  } else if ((option_from === "Kilometer" && option_to) === "Mile") {
+    input.value = Number(result.value) * 1.609;
+  } else if ((option_from === "Kilometer" && option_to) === "Nautical") {
+    input.value = Number(result.value) * 1.852;
+  } else if ((option_from === "Kilometer" && option_to) === "Kilometer") {
+    input.value = result.value;
+  }
+
+  // ! =======Nautical to
+
+  if ((option_from === "Nautical" && option_to) === "Foot") {
+    input.value = Number(result.value) / 6076;
+  } else if ((option_from === "Nautical" && option_to) === "Centimeter") {
+    input.value = Number(result.value) / 185200;
+  } else if ((option_from === "Nautical" && option_to) === "INCH") {
+    input.value = Number(result.value) / 72910;
+  } else if ((option_from === "Nautical" && option_to) === "Meter") {
+    input.value = Number(result.value) / 1852;
+  } else if ((option_from === "Nautical" && option_to) === "Millimeter") {
+    input.value = Number(result.value) / 1.852e6;
+  } else if ((option_from === "Nautical" && option_to) === "Micrometer") {
+    input.value = Number(result.value) / 1.852e9;
+  } else if ((option_from === "Nautical" && option_to) === "Nanometer") {
+    input.value = Number(result.value) / 1.852e12;
+  } else if ((option_from === "Nautical" && option_to) === "YARD") {
+    input.value = Number(result.value) / 2025;
+  } else if ((option_from === "Nautical" && option_to) === "Mile") {
+    input.value = Number(result.value) / 1.151;
+  } else if ((option_from === "Nautical" && option_to) === "Kilometer") {
+    input.value = Number(result.value) / 1.852;
+  } else if ((option_from === "Nautical" && option_to) === "Nautical") {
+    input.value = result.value;
   }
 }

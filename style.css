@@ -1,13 +1,6 @@
 * {
   font-family: "Times New Roman", Times, serif;
 }
-h1 {
-  text-align: center;
-}
-#equal {
-  margin: 10px;
-  padding-bottom: 32px;
-}
 html {
   height: 100%;
 }
@@ -20,6 +13,16 @@ body {
   background-image: linear-gradient(45deg, #12c2e9, #c471ed, #f64f59);
   background-repeat: no-repeat;
 }
+/* ?equal sign START */
+h1 {
+  text-align: center;
+}
+#equal {
+  margin: 10px;
+  padding-bottom: 32px;
+}
+/* ?equal sign END */
+/* ! SECTION START */
 #convertsection {
   border: 1px solid #dadce0;
   border-radius: 8px;
@@ -36,6 +39,8 @@ body {
   justify-content: center;
   align-items: center;
 }
+/* ! SECTION END*/
+/* ?input type number START */
 input {
   background-color: #fff;
   border: 1px solid #dadce0;
@@ -47,6 +52,7 @@ input {
   text-align: center;
   width: 197px;
 }
+/* ?input section START  */
 .btnn {
   background-color: #f8f9fa;
   border: 1px solid #dadce0;
@@ -62,10 +68,12 @@ input {
   background-color: #e4e4e4;
   box-shadow: 0px 3px 3px 0px grey;
 }
+/* ?input section END  */
 
 /* RESONSIV */
 
 @media only screen and (max-width: 500px) {
+  /* !section start*/
   #convertsection {
     width: 80%;
     height: 100%;
@@ -75,8 +83,11 @@ input {
     flex-direction: column;
     margin: 40px;
   }
+  /* !section end */
+  /* ? === start */
   #equal {
     margin: 0px;
     padding-bottom: 0px;
   }
+  /* ? === end */
 }
